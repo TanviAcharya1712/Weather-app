@@ -25,7 +25,7 @@ A premium, aesthetically designed weather application featuring an **"Ethnic Pea
 
 ## 🚀 Live Demo
 
-* **![Click here to View](https://tanviacharya1712.github.io/Weather-app/)**
+* **[Click here to View](https://tanviacharya1712.github.io/Weather-app/)**
 
 ## 🛠️ Built With
 
