@@ -56,4 +56,4 @@ A premium, aesthetically designed weather application featuring an **"Ethnic Pea
 This project is open source and available under the [MIT License](LICENSE).
 
 ---
-Designed with ❤️ by **Antigravity**
+Developed with ❤️ by **Tanvi Acharya**
