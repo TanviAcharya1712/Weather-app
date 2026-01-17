@@ -2,7 +2,7 @@
 
 A premium, aesthetically designed weather application featuring an **"Ethnic Peacock"** theme. This project is designed to be visually stunning, responsive, and user-friendly, blending "Feminine" softness with "Royal" accents.
 ## Live Demo
-* [WETHER APP](Wetherapp.png)
+ [WETHER APP](Wetherapp.png)
 
 ## ✨ Features
 
