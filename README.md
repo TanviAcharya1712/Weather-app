@@ -1,58 +1,59 @@
-# 🌤️ Global Weather App
+# 🌦️ Elegant Weather App - Ethnic Peacock Edition
 
-[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://patel-bhavik2306005.github.io/Front-End-Weadher-Application-Via-Open-source/) ![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
+A premium, aesthetically designed weather application featuring an **"Ethnic Peacock"** theme. This project is designed to be visually stunning, responsive, and user-friendly, blending "Feminine" softness with "Royal" accents.
 
-A premium, fast, and responsive weather application built with **Vanilla JavaScript**, **HTML5**, and **CSS3**. It provides real-time weather updates and 7-day forecasts for any location worldwide.
+## ✨ Features
 
-![Weather App Demo](demo.png)
+*   **Beautiful UI**:
+    *   **Ethnic Peacock Theme**: A balanced 60/40 blend of **Soft Rose Pink** (Feminine) and **Deep Teal** (Masculine).
+    *   **Royal Accents**: **Mustard Gold** borders, buttons, and shadows inspired by traditional shawls.
+    *   **Glassmorphism**: Frosted glass panels with gold tints for a jewelry-box aesthetic.
+    *   **Animated Gradients**: Smooth, flowing backgrounds that feel alive.
+*   **Comprehensive Weather Data**:
+    *   Real-time temperature and condition.
+    *   Air Quality Index (AQI) with dynamic, color-coded health warnings.
+    *   Detailed metrics: Humidity, Wind Speed/Direction, UV Index, Visibility, Sunrise/Sunset.
+    *   **Ozone Levels** monitoring.
+*   **Smart Location Search**:
+    *   Search by **City Name**, **Village**, or **Pincode**.
+    *   Auto-detects coordinates and fetches precise data.
+*   **Interactive Map**:
+    *   Embedded **Google View** showing the exact searched location.
+    *   Gold-framed map window strictly aligned with the weather details.
+*   **Fully Responsive**:
+    *   Adapts perfectly to Mobile, Tablet, and Desktop screens.
 
-## � Live Demo
+## 🚀 Live Demo
 
-### [Click Here to Open App](https://patel-bhavik2306005.github.io/Front-End-Weadher-Application-Via-Open-source/)
+[Link to your GitHub Pages site will appear here soon]
 
-## 🌟 Features
+## 🛠️ Built With
 
-- **🌍 Global Search Capability**  
-  Seamlessly search by **City Name** (e.g., *London, Tokyo*) or **Postal Code** (e.g., *380001, 10001*).
-  
-- **🗺️ Intelligent Geocoding Strategy**  
-  Uses a robust dual-API system:
-  1. **Primary**: Open-Meteo Geocoding API.
-  2. **Fallback**: OpenStreetMap Nominatim API (ensures granular support for Indian pincodes and smaller regions).
+*   **HTML5** - Semantic structure.
+*   **CSS3** - Custom properties, Flexbox/Grid, Animations.
+*   **JavaScript (ES6+)** - Async/Await, DOM Manipulation.
+*   **Open-Meteo API** - For Weather & Air Quality data.
+*   **Nominatim (OpenStreetMap)** - For Geocoding (City/Pincode search).
 
-- **📊 Comprehensive Weather Data**  
-  - Real-time Temperature & Conditions
-  - Humidity & Wind Speed
-  - **7-Day Weekly Forecast**
+## 🎨 Design Palette
 
-- **🍃 Air Quality Monitoring**  
-  Live AQI (Air Quality Index) updates with health impact categories (Good, Moderate, Unhealthy).
+| Color | Hex | Usage |
+| :--- | :--- | :--- |
+| **Soft Rose** | `#F8BBD0` | Top Background (Feminine Base) |
+| **Deep Teal** | `#1F6E75` | Bottom Background (Image Match) |
+| **Mustard Gold** | `#DAA520` | Borders, Buttons, Icons (Accent) |
 
-- **📱 Fully Responsive**  
-  Optimized for Desktop, Tablet, and Mobile devices.
+## 📦 How to Run
 
-## 🛠️ Tech Stack
-
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript (ES6+)
-- **APIs**:
-  - [Open-Meteo](https://open-meteo.com/) (Weather Data)
-  - [OpenStreetMap Nominatim](https://nominatim.org/) (Geocoding Fallback)
-
-## 📁 Project Structure
-
-```bash
-📦 weather-app
- ┣ 📜 index.html      # Main Structure
- ┣ 📜 style.css       # Styling & Responsive Design
- ┣ 📜 script.js       # API Logic & UI Updates
- ┣ 📜 demo.png        # Screenshot for README
- ┗ 📜 README.md       # Documentation
-```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/TanviAcharya1712/Weather-app.git
+    ```
+2.  Open `index.html` in your browser.
 
 ## 📄 License
 
-This project is open-source and available under the [MIT License](LICENSE).
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+Designed with ❤️ by **Antigravity**

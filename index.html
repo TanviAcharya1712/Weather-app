@@ -4,127 +4,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Weather App</title>
+    <title>Elegant Weather</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Using Google Fonts for a Premium Look -->
+    <!-- Google Fonts: Playfair Display for headers, Poppins for text -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-
-    <div class="container">
-        <!-- Header Section -->
-        <header>
-            <h1><i class="fa-solid fa-cloud-sun-rain"></i> Weather & Air Quality</h1>
-            <p>Enter a city name or pincode to get global weather details.</p>
-        </header>
-
-        <!-- Search Section -->
-        <div class="search-box">
-            <input type="text" id="city-input" placeholder="Enter City Name or Pincode (e.g., London, 10001)">
-            <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
-        </div>
-
-        <!-- Error Message -->
-        <p id="error-message" class="error hidden"></p>
-
-        <!-- Loading Spinner -->
-        <div id="loading" class="loading hidden">
-            <div class="spinner"></div>
-            <p>Fetching Weather Data...</p>
-        </div>
-
-        <!-- Weather Content (Hidden by default) -->
-        <div id="weather-data" class="weather-content hidden">
-
-            <!-- Current Weather & AQI Grid -->
-            <div class="current-grid">
-                <!-- Current Weather Card -->
-                <div class="card weather-card">
-                    <h2 id="city-name">--</h2>
-                    <p class="date" id="current-date">--</p>
-
-                    <div class="weather-main">
-                        <i id="weather-icon" class="fa-solid fa-sun weather-icon"></i>
-                        <h3 id="temperature">--°C</h3>
-                    </div>
-                    <p id="weather-condition" class="condition">--</p>
-
-                    <div class="details">
-                        <div class="detail-item">
-                            <i class="fa-solid fa-droplet"></i>
-                            <span>Humidity: <span id="humidity">--</span>%</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fa-solid fa-wind"></i>
-                            <span>Wind: <span id="wind-speed">--</span> km/h</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Air Quality Card -->
-                <div class="card aqi-card">
-                    <h2><i class="fa-solid fa-lungs"></i> Air Quality</h2>
-                    <div class="aqi-score" id="aqi-container">
-                        <span id="aqi-value">--</span>
-                        <p id="aqi-status">--</p>
-                    </div>
-                    <div class="aqi-details">
-                        <div class="detail-item tooltip">
-                            <span>PM2.5</span>
-                            <span id="pm25">--</span>
-                            <span class="tooltiptext">Fine particles</span>
-                        </div>
-                        <div class="detail-item tooltip">
-                            <span>PM10</span>
-                            <span id="pm10">--</span>
-                            <span class="tooltiptext">Coarse particles</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>NO2</span>
-                            <span id="no2">--</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>O3</span>
-                            <span id="o3">--</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>SO2</span>
-                            <span id="so2">--</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>CO</span>
-                            <span id="co">--</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>UV Index</span>
-                            <span id="uv">--</span>
-                        </div>
-                        <div class="detail-item tooltip">
-                            <span>Aerosol</span>
-                            <span id="aerosol">--</span>
-                            <span class="tooltiptext">Aerosol Optical Depth</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 7-Day Forecast Section -->
-            <div class="forecast-section">
-                <h2><i class="fa-solid fa-calendar-week"></i> 7-Day Forecast</h2>
-                <div class="forecast-container" id="forecast-container">
-                    <!-- Forecast items will be injected here by JavaScript -->
-                </div>
-            </div>
-
-        </div>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
     </div>
 
-    <!-- JavaScript File -->
+    <main class="container">
+        <header class="app-header">
+            <h1>Weather & Map</h1>
+            <p>Discover the atmosphere of any place.</p>
+        </header>
+
+        <section class="search-section glass-panel">
+            <div class="search-box">
+                <i class="fa-solid fa-location-dot location-icon"></i>
+                <input type="text" id="city-input" placeholder="Search city, village, or pincode..." autocomplete="off">
+                <button id="search-btn" class="search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="error-msg" id="error-msg"></div>
+        </section>
+
+        <div class="content-wrapper" id="content-wrapper" style="display: none;">
+            <section class="weather-card glass-panel">
+                <div class="weather-header">
+                    <h2 id="city-name">--</h2>
+                    <span id="country-code" class="badge">--</span>
+                </div>
+                <div class="location-details">
+                    <p><i class="fa-solid fa-map-pin"></i> Pincode: <span id="pincode">--</span></p>
+                </div>
+
+                <div class="weather-main">
+                    <div class="temp-container">
+                        <span id="temperature" class="temp">--</span>
+                        <span class="unit">°C</span>
+                    </div>
+                    <div class="weather-icon-container">
+                        <i id="weather-icon" class="fa-solid fa-cloud-sun weather-icon"></i>
+                        <p id="condition-text">Condition</p>
+                    </div>
+                </div>
+
+                <!-- AQI & Ozone Section -->
+                <div class="aqi-ozone-container" id="aqi-container">
+                    <div class="aqi-box">
+                        <i class="fa-solid fa-lungs"></i>
+                        <div>
+                            <span class="label">Air Quality (US AQI)</span>
+                            <span id="aqi-value" class="value">--</span>
+                            <span id="aqi-status" class="badge">--</span>
+                        </div>
+                    </div>
+                    <div class="ozone-box">
+                        <i class="fa-solid fa-shield-virus"></i>
+                        <div>
+                            <span class="label">Ozone (O₃)</span>
+                            <span id="ozone-value" class="value">-- µg/m³</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comprehensive Details Grid -->
+                <div class="details-grid">
+                    <!-- 1. Feels Like -->
+                    <div class="detail-card">
+                        <i class="fa-solid fa-temperature-half"></i>
+                        <span class="label">Feels Like</span>
+                        <span id="feels-like" class="value">--°C</span>
+                    </div>
+                    <!-- 2. Humidity -->
+                    <div class="detail-card">
+                        <i class="fa-solid fa-droplet"></i>
+                        <span class="label">Humidity</span>
+                        <span id="humidity" class="value">--%</span>
+                    </div>
+                    <!-- 3. Wind Speed -->
+                    <div class="detail-card">
+                        <i class="fa-solid fa-wind"></i>
+                        <span class="label">Wind Speed</span>
+                        <span id="wind-speed" class="value">-- km/h</span>
+                    </div>
+                    <!-- 4. Wind Direction -->
+                    <div class="detail-card">
+                        <i class="fa-solid fa-compass"></i>
+                        <span class="label">Direction</span>
+                        <span id="wind-dir" class="value">--°</span>
+                    </div>
+                    <!-- 5. Wind Gusts -->
+                    <div class="detail-card">
+                        <i class="fa-solid fa-hurricane"></i>
+                        <span class="label">Wind Gusts</span>
+                        <span id="wind-gusts" class="value">-- km/h</span>
+                    </div>
+                    <!-- 6. Pressure -->
+                    <div class="detail-card">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <span class="label">Pressure</span>
+                        <span id="pressure" class="value">-- hPa</span>
+                    </div>
+                    <!-- 7. Visibility -->
+                    <div class="detail-card">
+                        <i class="fa-solid fa-eye"></i>
+                        <span class="label">Visibility</span>
+                        <span id="visibility" class="value">-- km</span>
+                    </div>
+                    <!-- 8. UV Index -->
+                    <div class="detail-card">
+                        <i class="fa-regular fa-sun"></i>
+                        <span class="label">UV Index</span>
+                        <span id="uv-index" class="value">--</span>
+                    </div>
+                    <!-- 9. Cloud Cover -->
+                    <div class="detail-card">
+                        <i class="fa-solid fa-cloud"></i>
+                        <span class="label">Cloud Cover</span>
+                        <span id="cloud-cover" class="value">--%</span>
+                    </div>
+                    <!-- 10. Precipitation -->
+                    <div class="detail-card">
+                        <i class="fa-solid fa-glass-water"></i>
+                        <span class="label">Precipitation</span>
+                        <span id="precipitation" class="value">-- mm</span>
+                    </div>
+                    <!-- 11. Dew Point -->
+                    <div class="detail-card">
+                        <i class="fa-solid fa-icicles"></i>
+                        <span class="label">Dew Point</span>
+                        <span id="dew-point" class="value">--°C</span>
+                    </div>
+                    <!-- 12. Sunrise -->
+                    <div class="detail-card">
+                        <i class="fa-solid fa-sun" style="color: #ff9800;"></i>
+                        <span class="label">Sunrise</span>
+                        <span id="sunrise" class="value">--:--</span>
+                    </div>
+                    <!-- 13. Sunset -->
+                    <div class="detail-card">
+                        <i class="fa-solid fa-moon" style="color: #673ab7;"></i>
+                        <span class="label">Sunset</span>
+                        <span id="sunset" class="value">--:--</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="map-container glass-panel">
+                <h3>Location View</h3>
+                <div class="map-frame-wrapper">
+                    <iframe id="google-map" width="100%" height="100%" style="border:0;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </section>
+        </div>
+
+        <div id="loading-spinner" class="loading-spinner" style="display: none;">
+            <div class="spinner"></div>
+            <p>Fetching weather & location...</p>
+        </div>
+
+    </main>
+
+    <footer class="app-footer">
+        <p>Designed with <i class="fa-solid fa-heart" style="color: #e91e63;"></i> by Antigravity</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 
